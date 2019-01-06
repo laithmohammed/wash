@@ -12,17 +12,15 @@ export default function withPermit(ComponentToProtect) {
     }
 
     componentDidMount() {
-      fetch('http://localhost:8080/checkPermit')
-        .then(res => {
-          if (res.status === 200) {
-            this.setState({ loading: false });
+      fetch('http://localhost:5678/checkPermit')
+        .then(res => res.json()).then(data => {
+          if (data.valid === true) {
+            this.setState({ loading: false, redirect: false });
           } else {
-            // const error = new Error(res.error);
-            // throw error;
+            this.setState({ loading: false, redirect: true });
           }
         })
         .catch(err => {
-        // console.error(err);
           this.setState({ loading: false, redirect: true });
         });
     }

@@ -7,6 +7,9 @@
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.4",
+    "firebase": "^5.7.2",
+    "firebase-admin": "^6.4.0",
+    "joi": "^14.3.1",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.4.1",
     "react": "^16.7.0",
@@ -20,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server" : "nodemon server.js"
+    "server": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": "react-app"

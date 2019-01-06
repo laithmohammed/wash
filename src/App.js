@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-
 import withPermit from './withPermit';
 import Indexpage from './components/index';
 import Login from './components/login';
@@ -9,6 +8,10 @@ import Startup from './components/startup';
 import Selection from './components/selection';
 
 class App extends Component {
+  componentDidMount(){
+    fetch('http://localhost:5678/checkPermit')
+      .then(res => console.log(res.text())).catch(err=>console.log(err))
+  }
   render() {
     return (
       <Router>
